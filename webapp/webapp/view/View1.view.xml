@@ -1,0 +1,50 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.dp.controller.View1">
+	
+	<Page title="{i18n>XTIT_VIEW1}">
+		<headerContent>
+			<Button id="idBtn" icon="sap-icon://arrow-right" press="onPress" />
+			<!--<Toolbar>-->
+			<!--	<ToolbarSpacer/>-->
+				<!--<Button icon="sap-icon://delete" press="onBtnDelete" />-->
+			<!--</Toolbar>-->
+		</headerContent>
+		<content>
+			<SearchField id="idSF" search="onSearch" liveChange="onSearch"/>
+		<List id="idLST" mode="SingleSelectMaster" selectionChange="onSelectionChange" delete="onDelete" items="{
+		 path : '/fruits',
+		 sorter : {
+		 path : 'name'
+		 }
+		}">
+			<items>
+		 <ObjectListItem title="{name}" intro="{taste}" icon="{image}"
+		  number="{price}" numberUnit="{curr}"></ObjectListItem>
+		<!--<DisplayListItem label="Apple" value="A natural antibiotic"></DisplayListItem>-->
+		<!--<StandardListItem title="Orange" description="A rich source of Vitamin C" icon="https://elwadi.eg/main/wp-content/uploads/2020/02/valencia.png"></StandardListItem>-->
+		<!--<InputListItem>-->
+		<!--	<HBox>-->
+		<!--		<Label text="What is your favourite fruit?"></Label>-->
+		<!--		<Input />-->
+		<!--	</HBox>-->
+		<!--</InputListItem>-->
+		<!--<CustomListItem>-->
+		<!--	<Label text="Do you want COD?"/>-->
+		<!--	<Switch/>-->
+		<!--</CustomListItem>-->
+		<!--<ObjectListItem title="Pineapple" intro="good for health" icon="https://sicarfarms.com/wp-content/uploads/2021/01/Pineapple.png"-->
+		<!--number="70 INR" numberUnit="per fruit">-->
+		<!--	<attributes>-->
+		<!--		<ObjectAttribute text="greenish-yellow" title="Color"/>-->
+		<!--		<ObjectAttribute text="Amazon fresh" title="Store"/>-->
+				
+		<!--	</attributes>-->
+		<!--</ObjectListItem>-->
+		<!--<FeedListItem sender="Elon Musk" text="Hi Afreed , How are you?" icon="https://upload.wikimedia.org/wikipedia/commons/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg"-->
+		<!--timestamp="Sun 20th March 2022"></FeedListItem>-->
+		<!--<ActionListItem text="Order Now" press="onActionListItem"></ActionListItem>-->
+		 </items>
+		</List>
+	    </content>
+	</Page>
+	
+</mvc:View>

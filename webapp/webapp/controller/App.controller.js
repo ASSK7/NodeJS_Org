@@ -1,0 +1,9 @@
+sap.ui.define([
+'sap/ui/core/mvc/Controller'	
+],function(Controller){
+	return Controller.extend("com.dp.controller.App",{
+		onInit : function(){
+			
+		}
+	});
+});

@@ -1,0 +1,81 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.dp.controller.View2"
+xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page title="View2" showNavButton="true" navButtonPress="onBack">
+	
+	<content>
+    <ObjectHeader title="{name}" intro="{taste}" icon="{image}"
+		  number="{price}" numberUnit="{curr}" ></ObjectHeader>		
+		
+	<IconTabBar>
+		<items>
+			<IconTabFilter icon="sap-icon://warning" text="More Info">
+				<core:Fragment fragmentName="com.dp.fragments.moreInfo" type="XML"></core:Fragment>
+			</IconTabFilter>
+			<IconTabFilter icon="sap-icon://supplier" text="Supplier">
+				<Table items="{/supplier}" id="idTable">
+					<headerToolbar>
+						<Toolbar>
+							<ToolbarSpacer />
+							<Button icon="sap-icon://filter" press="onFilter"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<header>
+								<Text text="Name"></Text>
+							</header>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<header>
+								<Text text="Since When"></Text>
+							</header>
+						</Column>
+						<Column minScreenWidth="Tablet">
+							<header>
+								<Text text="Contact Number"></Text>
+							</header>
+						</Column>
+						<Column>
+							<header>
+								<Text text="City"></Text>
+							</header>
+						</Column>
+					</columns>
+					<items>
+					<ColumnListItem>
+							<Text text="{name}"></Text>
+							<Input value="{sinceWhen}" showValueHelp="true" valueHelpRequest="onValueHelp"></Input>
+							<Text text="{contactNo}"></Text>
+							<Link text="{city}" press="onLinkPress"></Link>
+					</ColumnListItem>
+					</items>
+				</Table>
+			</IconTabFilter>
+			<IconTabFilter icon="sap-icon://home" text="Cities">
+				<Select items="{/cities}">
+					<core:Item text="{cityName}" key="{cityName}" />
+				</Select>
+				
+				<ComboBox items="{/cities}">
+					<core:Item text="{cityName}" key="{cityName}" />
+				</ComboBox>
+				
+				<MultiComboBox items="{/cities}">
+					<core:Item text="{cityName}" key="{cityName}" />
+				</MultiComboBox>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+	</content>
+	
+	<footer>
+	  <Toolbar>
+	  	<ToolbarSpacer/>
+	  	<Button text="Order" press="onOrder" type="Emphasized"/>
+	  	<Button text="Cancel" press="onCancel" type="Reject"/>
+	  </Toolbar>	
+	  </footer>
+	</Page>
+	
+	
+</mvc:View>

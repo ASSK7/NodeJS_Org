@@ -1,0 +1,4 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.dp.controller.Image">
+	<Image src="http://images6.fanpop.com/image/photos/42600000/Thor-arriving-in-Wakanda-in-Infinity-War-avengers-infinity-war-1-and-2-42655413-540-300.gif"
+	 width="100%" height="100%"></Image>
+</mvc:View>
